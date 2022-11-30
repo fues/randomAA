@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ﾊｯﾋﾟｰﾆｭｰｲﾔｰ!ｲﾔｯｯﾎｫｫｵｩ!!</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='random_aa.js'></script>
+    <script>
+        const transpose = a => a[0].map((_, c) => a.map(r => r[c]));
+        window.onload = ()=>{
+            NewYear();
+        }
+        function NewYear(){
+            //ﾊｯﾋﾟｰﾆｭｰｲﾔｰ!ｲﾔｯｯﾎｫｫｵｩ!!
+            const aa = document.getElementById("AA");
+            const randomChar = new random(3,5);
+            const txts = [];
+            txts[0] = randomChar.get(true);
+            txts[1] = randomChar.get(false);
+            txts[2] = randomChar.get(false);
+            txts[3] = randomChar.get(false);
+            let txt = ""
+            txt = "ﾊｯﾋﾟｰﾆｭｰｲﾔｰ!ｲﾔｯｯﾎｫｫｵｩ!!\n";
+            txt +=transpose(txts.map(txt=>txt.split("\n"))).map(lineList=>lineList.join("")).join("\n");
+            aa.innerText = txt;
+        }
+        function CopyNewYear(){
+            const aa = document.getElementById("AA");
+            navigator.clipboard.writeText(aa.innerText);
+        }
+    </script>
+</head>
+<body>
+    <p><a href="https://shindanmaker.com/854593" target="_blank">(https://shindanmaker.com/854593)</a></p>
+    <button onclick="NewYear()">ﾊｯﾋﾟｰﾆｭｰｲﾔｰ!ｲﾔｯｯﾎｫｫｵｩ!!</button>
+    <div id="AA"></div>
+    <button onclick="CopyNewYear()">結果をコピーする</button>
+    <p>Q:なにこれ</p>
+    <p>A:わからん</p>
+    
+</body>
+</html>
