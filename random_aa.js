@@ -15,11 +15,12 @@ class random{
                     c = true;
                 }else{
                     let prpb = 0.3;
-                    if( y!=0 && matrix[y-1][x] == true){
-                        prpb += 0.2;
-                    }
-                    if( x!=0 && column[x-1] == true){
-                        prpb += 0.2;
+                    const up =  y!=0 && matrix[y-1][x] == true;
+                    const left = x!=0 && column[x-1] == true;
+                    if(up ^ left){
+                        prpb += 0.4;
+                    }else if(up && left){
+                        prpb -= 0.2;
                     }
                     if(Math.random()<prpb){
                         c = true;
